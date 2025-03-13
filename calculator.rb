@@ -20,6 +20,14 @@ class Calculator
         # converts to an integer array
         nums = str_array.map(&:to_i)
 
+        # filter the negative numbers in the input string
+        negative_nums = nums.filter { |num| num < 0}
+
+        # throws exception when negative numbers are exist
+        if negative_nums.any?
+            raise "negative numbers are not allowed: #{negative_nums.join(",")}" 
+        end
+
         sum = 0
         nums.each {|num| sum += num}
         return sum

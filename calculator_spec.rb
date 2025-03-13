@@ -25,5 +25,9 @@ RSpec.describe Calculator do
         it "test when the input string contains custom delimiter" do
             expect(calc.add("//;\n10;20")).to eq(30)
         end
+
+        it "test when the input string contains negative numbers and throws exception" do
+            expect{calc.add("1,-2,1,-9")}.to raise_error(RuntimeError, "negative numbers are not allowed: -2,-9")
+        end
     end
 end
