@@ -21,5 +21,9 @@ RSpec.describe Calculator do
         it "test when the input string contains \n" do
             expect(calc.add("1\n2,3")).to eq(6)
         end
+
+        it "test when the input string contains custom delimiter" do
+            expect(calc.add("//;\n10;20")).to eq(30)
+        end
     end
 end

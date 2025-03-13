@@ -5,6 +5,12 @@ class Calculator
         # default delim
         delimiter = ","
 
+        # it handles when the input string starts with //
+        if input_str.start_with?("//")
+            input_str = input_str.gsub("//", "")
+            delimiter = input_str[0]
+        end
+
         # Replacing \n with delimiter
         input_str = input_str.gsub("\n", delimiter)
 
