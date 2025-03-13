@@ -13,5 +13,13 @@ RSpec.describe Calculator do
             res = calc.add("")
             expect(res).to eq(0)
         end
+
+        it "test when the input is single number string and retruns that number" do
+            expect(calc.add("10")).to eq(10)
+        end
+
+        it "test when the input string contains \n" do
+            expect(calc.add("1\n2,3")).to eq(6)
+        end
     end
 end
